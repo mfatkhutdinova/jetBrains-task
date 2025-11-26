@@ -1,0 +1,77 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name      : "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  - job_name      : "php-fpm-exporter"
+    static_configs:
+      - targets:
+          - 3.77.200.134:9253     # wp-0.miliia.test.monitoring.intellij.net
+          - 18.194.251.242:9253   # wp-1.miliia.test.monitoring.intellij.net 
+          - 54.93.244.237:9253    # wp-2.miliia.test.monitoring.intellij.net 
+          - 52.59.188.203:9253    # wp-3.miliia.test.monitoring.intellij.net 
+          - 3.76.216.37:9253      # wp-4.miliia.test.monitoring.intellij.net 
+          - 18.185.79.93:9253     # wp-5.miliia.test.monitoring.intellij.net 
+          - 63.180.182.103:9253   # wp-6.miliia.test.monitoring.intellij.net
+          - 18.192.129.74:9253    # wp-7.miliia.test.monitoring.intellij.net
+          - 18.199.144.92:9253    # wp-8.miliia.test.monitoring.intellij.net
+          - 3.76.223.135:9253     # wp-9.miliia.test.monitoring.intellij.net  
+
+  - job_name      : "node-exporter"
+    static_configs:
+      - targets:
+          - 3.77.200.134:9100     # wp-0.miliia.test.monitoring.intellij.net
+          - 18.194.251.242:9100   # wp-1.miliia.test.monitoring.intellij.net 
+          - 54.93.244.237:9100    # wp-2.miliia.test.monitoring.intellij.net 
+          - 52.59.188.203:9100    # wp-3.miliia.test.monitoring.intellij.net 
+          - 3.76.216.37:9100      # wp-4.miliia.test.monitoring.intellij.net 
+          - 18.185.79.93:9100     # wp-5.miliia.test.monitoring.intellij.net 
+          - 63.180.182.103:9100   # wp-6.miliia.test.monitoring.intellij.net
+          - 18.192.129.74:9100    # wp-7.miliia.test.monitoring.intellij.net
+          - 18.199.144.92:9100    # wp-8.miliia.test.monitoring.intellij.net
+          - 3.76.223.135:9100     # wp-9.miliia.test.monitoring.intellij.net  
+
+  - job_name      : "mysql-exporter"
+    static_configs:
+      - targets:
+          - 3.77.200.134:9104     # wp-0.miliia.test.monitoring.intellij.net
+          - 18.194.251.242:9104   # wp-1.miliia.test.monitoring.intellij.net 
+          - 54.93.244.237:9104    # wp-2.miliia.test.monitoring.intellij.net 
+          - 52.59.188.203:9104    # wp-3.miliia.test.monitoring.intellij.net 
+          - 3.76.216.37:9104      # wp-4.miliia.test.monitoring.intellij.net 
+          - 18.185.79.93:9104     # wp-5.miliia.test.monitoring.intellij.net 
+          - 63.180.182.103:9104   # wp-6.miliia.test.monitoring.intellij.net
+          - 18.192.129.74:9104    # wp-7.miliia.test.monitoring.intellij.net
+          - 18.199.144.92:9104    # wp-8.miliia.test.monitoring.intellij.net
+          - 3.76.223.135:9104     # wp-9.miliia.test.monitoring.intellij.net  
+
+  - job_name      : "nginx-exporter"
+    static_configs:
+      - targets:
+          - 3.77.200.134:9113     # wp-0.miliia.test.monitoring.intellij.net
+          - 18.194.251.242:9113   # wp-1.miliia.test.monitoring.intellij.net 
+          - 54.93.244.237:9113    # wp-2.miliia.test.monitoring.intellij.net 
+          - 52.59.188.203:9113    # wp-3.miliia.test.monitoring.intellij.net 
+          - 3.76.216.37:9113      # wp-4.miliia.test.monitoring.intellij.net 
+          - 18.185.79.93:9113     # wp-5.miliia.test.monitoring.intellij.net 
+          - 63.180.182.103:9113   # wp-6.miliia.test.monitoring.intellij.net
+          - 18.192.129.74:9113    # wp-7.miliia.test.monitoring.intellij.net
+          - 18.199.144.92:9113    # wp-8.miliia.test.monitoring.intellij.net
+          - 3.76.223.135:9113     # wp-9.miliia.test.monitoring.intellij.net  
+
+  - job_name      : "wordpress-exporter"
+    static_configs:
+      - targets:
+          - 3.77.200.134:11011     # wp-0.miliia.test.monitoring.intellij.net
+          - 18.194.251.242:11011   # wp-1.miliia.test.monitoring.intellij.net 
+          - 54.93.244.237:11011    # wp-2.miliia.test.monitoring.intellij.net 
+          - 52.59.188.203:11011    # wp-3.miliia.test.monitoring.intellij.net 
+          - 3.76.216.37:11011      # wp-4.miliia.test.monitoring.intellij.net 
+          - 18.185.79.93:11011     # wp-5.miliia.test.monitoring.intellij.net 
+          - 63.180.182.103:11011   # wp-6.miliia.test.monitoring.intellij.net
+          - 18.192.129.74:11011    # wp-7.miliia.test.monitoring.intellij.net
+          - 18.199.144.92:11011    # wp-8.miliia.test.monitoring.intellij.net
+          - 3.76.223.135:11011     # wp-9.miliia.test.monitoring.intellij.net 

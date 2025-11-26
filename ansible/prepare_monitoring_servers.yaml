@@ -1,0 +1,7 @@
+---
+- name: Prepare Monitoring Servers
+  hosts: monitoring
+  become: true
+  roles:
+    - prometheus
+    - grafana

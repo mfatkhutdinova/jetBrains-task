@@ -1,0 +1,12 @@
+---
+- name: Prepare WordPress servers
+  hosts: wp
+  become: true
+  roles: 
+    - docker
+    - node-exporter
+    - mysql-exporter
+    - php-fpm-exporter
+    - nginx-exporter
+    - wordpress-exporter
+    

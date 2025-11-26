@@ -1,0 +1,9 @@
+---
+- name: Upload Node Exporter install script
+  copy:
+    src: install_prometheus_node_exporter.sh
+    dest: /tmp/install_prometheus_node_exporter.sh
+    mode: "0755"
+
+- name: Run Node Exporter install script
+  command: /tmp/install_prometheus_node_exporter.sh

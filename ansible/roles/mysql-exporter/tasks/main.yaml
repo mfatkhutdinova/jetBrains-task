@@ -1,0 +1,22 @@
+---
+- name: Copy MySQL Exporter configuration file
+  become: true
+  copy:
+    src: /etc/mysql/debian.cnf
+    dest: /home/ubuntu/user_my.cnf
+    owner: ubuntu
+    group: ubuntu
+    mode: '0644'
+    remote_src: yes
+
+- name: Run MySQL Exporter container
+  community.docker.docker_container:
+    name: mysqld_exporter
+    image: prom/mysqld-exporter:v0.18.0
+    state: started
+    restart_policy: always
+    ports:
+      - "9104:9104"
+    volumes:
+      - "/home/ubuntu/user_my.cnf:/.my.cnf:ro"
+      - "/var/run/mysqld/mysqld.sock:/var/run/mysqld/mysqld.sock"

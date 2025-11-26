@@ -1,0 +1,28 @@
+---
+- name: Deploy nginx default config with stub_status
+  template:
+    src: nginx-default.j2
+    dest: /etc/nginx/sites-available/default
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Reload nginx
+  service:
+    name: nginx
+    state: reloaded
+
+- name: Show private IP
+  debug:
+    var: ansible_default_ipv4.address
+    
+- name: Run Nginx Exporter Container
+  community.docker.docker_container:
+    name: nginx_exporter
+    image: nginx/nginx-prometheus-exporter:1.5.1 
+    state: started
+    restart_policy: always
+    published_ports:
+      - "9113:9113" 
+    command: "--nginx.scrape-uri=http://{{ ansible_default_ipv4.address }}/stub_status"
+

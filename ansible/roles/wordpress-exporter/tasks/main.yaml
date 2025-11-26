@@ -1,0 +1,12 @@
+---
+- name: Start wordpress-exporter container
+  docker_container:
+    name: wordpress-exporter
+    image: ghcr.io/aorfanos/wordpress-exporter/wordpress-exporter:v0.0.13
+    state: started
+    recreate: yes
+    published_ports:
+      - "11011:11011"
+    command: >
+      -host=http://{{ inventory_hostname }}
+      -auth.basic=false

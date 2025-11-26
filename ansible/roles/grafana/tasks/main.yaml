@@ -1,0 +1,9 @@
+---
+- name: Upload Grafana install script
+  copy:
+    src: install_grafana_service_ubuntu.sh
+    dest: /tmp/install_grafana_service_ubuntu.sh
+    mode: "0755"
+
+- name: Run Grafana install script
+  command: /tmp/install_grafana_service_ubuntu.sh
