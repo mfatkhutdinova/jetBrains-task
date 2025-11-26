@@ -51,8 +51,6 @@ This script will install:
 
 **Prometheus:** http://54.93.189.67:9090   
 **Grafana:** http://54.93.189.67:3000
-- Login: admin
-- Password: jetbrains_mila_123
 
 
 # Troubleshooting:
